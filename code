@@ -20,7 +20,11 @@ def rental_car_cost(d):
     days -= 20
   return days
 
-def trip_cost(city,days):
-  return (rental_car_cost(days) + hotel_cost(days)) + plane_ride_cost(city)
-
-print trip_cost(city,days)
+def additional_cost(m):
+  if m > 0:
+    return m
+  else:
+    return 0
+  
+def trip_cost(city,days,spending_money):
+  return (rental_car_cost(days) + hotel_cost(days)) + plane_ride_cost(city)  + additional_cost(spending_money)
